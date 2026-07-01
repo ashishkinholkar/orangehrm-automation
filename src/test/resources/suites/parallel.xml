@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<!--
+  Scenario-level parallelism. data-provider-thread-count controls how many
+  Cucumber scenarios run at once (BaseRunner uses @DataProvider(parallel=true)).
+  Override at runtime: mvn test -P parallel -Dthread.count=5
+-->
+<suite name="OrangeHRM-Parallel-Suite" verbose="1"
+       parallel="methods" data-provider-thread-count="3">
+
+    <listeners>
+        <listener class-name="com.orangehrm.listeners.TestListener"/>
+        <listener class-name="com.orangehrm.listeners.RetryTransformer"/>
+    </listeners>
+
+    <test name="Parallel-Regression">
+        <classes>
+            <class name="com.orangehrm.runner.RegressionRunner"/>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<!-- Default suite: runs the full regression runner sequentially. -->
+<suite name="OrangeHRM-Default-Suite" verbose="1">
+
+    <listeners>
+        <listener class-name="com.orangehrm.listeners.TestListener"/>
+        <listener class-name="com.orangehrm.listeners.RetryTransformer"/>
+    </listeners>
+
+    <test name="Regression">
+        <classes>
+            <class name="com.orangehrm.runner.RegressionRunner"/>
+        </classes>
+    </test>
+</suite>

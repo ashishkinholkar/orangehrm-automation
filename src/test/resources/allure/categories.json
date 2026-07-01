@@ -1,0 +1,6 @@
+[
+  { "name": "Element not found", "matchedStatuses": ["broken", "failed"], "messageRegex": ".*NoSuchElementException.*" },
+  { "name": "Timeout / synchronization", "matchedStatuses": ["broken", "failed"], "messageRegex": ".*TimeoutException.*" },
+  { "name": "Assertion failures", "matchedStatuses": ["failed"], "messageRegex": ".*AssertionError.*|.*assertThat.*" },
+  { "name": "Framework / config issues", "matchedStatuses": ["broken"], "messageRegex": ".*FrameworkException.*" }
+]

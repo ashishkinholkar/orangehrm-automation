@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.orangehrm</groupId>
+    <artifactId>orangehrm-automation</artifactId>
+    <version>1.0.0</version>
+    <packaging>jar</packaging>
+
+    <name>OrangeHRM BDD Automation Framework</name>
+    <description>Selenium + Cucumber + TestNG hybrid BDD framework for OrangeHRM</description>
+
+    <!-- =================================================================== -->
+    <!-- Centralised version management                                      -->
+    <!-- =================================================================== -->
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+
+        <!-- Core libraries -->
+        <selenium.version>4.21.0</selenium.version>
+        <cucumber.version>7.15.0</cucumber.version>
+        <testng.version>7.10.2</testng.version>
+        <webdrivermanager.version>5.8.0</webdrivermanager.version>
+
+        <!-- Reporting / logging -->
+        <allure.version>2.24.0</allure.version>
+        <aspectj.version>1.9.22</aspectj.version>
+        <log4j.version>2.23.1</log4j.version>
+
+        <!-- Utilities -->
+        <jackson.version>2.17.1</jackson.version>
+        <poi.version>5.2.5</poi.version>
+        <assertj.version>3.26.0</assertj.version>
+        <restassured.version>5.4.0</restassured.version>
+        <mysql.version>8.4.0</mysql.version>
+        <pdfbox.version>3.0.2</pdfbox.version>
+        <lombok.version>1.18.32</lombok.version>
+        <datafaker.version>2.2.2</datafaker.version>
+
+        <!-- Plugins -->
+        <surefire.version>3.2.5</surefire.version>
+        <allure.maven.version>2.12.0</allure.maven.version>
+
+        <!-- Runtime overridable parameters (mvn test -Dbrowser=firefox) -->
+        <browser>chrome</browser>
+        <headless>true</headless>
+        <env>qa</env>
+        <thread.count>3</thread.count>
+        <cucumber.filter.tags>@regression</cucumber.filter.tags>
+    </properties>
+
+    <dependencies>
+
+        <!-- ===== Selenium ===== -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>${selenium.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.github.bonigarcia</groupId>
+            <artifactId>webdrivermanager</artifactId>
+            <version>${webdrivermanager.version}</version>
+        </dependency>
+
+        <!-- ===== Cucumber BDD ===== -->
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-java</artifactId>
+            <version>${cucumber.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-testng</artifactId>
+            <version>${cucumber.version}</version>
+        </dependency>
+        <!-- Dependency injection for sharing state between step classes -->
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-picocontainer</artifactId>
+            <version>${cucumber.version}</version>
+        </dependency>
+
+        <!-- ===== TestNG ===== -->
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>${testng.version}</version>
+        </dependency>
+
+        <!-- ===== Allure Reporting ===== -->
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-cucumber7-jvm</artifactId>
+            <version>${allure.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-testng</artifactId>
+            <version>${allure.version}</version>
+        </dependency>
+
+        <!-- ===== Logging ===== -->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>${log4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>${log4j.version}</version>
+        </dependency>
+
+        <!-- ===== JSON / Excel test data ===== -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml</artifactId>
+            <version>${poi.version}</version>
+        </dependency>
+
+        <!-- ===== Assertions ===== -->
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+            <version>${assertj.version}</version>
+        </dependency>
+
+        <!-- ===== API validation (bonus) ===== -->
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>rest-assured</artifactId>
+            <version>${restassured.version}</version>
+        </dependency>
+
+        <!-- ===== DB validation (bonus) ===== -->
+        <dependency>
+            <groupId>com.mysql</groupId>
+            <artifactId>mysql-connector-j</artifactId>
+            <version>${mysql.version}</version>
+        </dependency>
+
+        <!-- ===== PDF validation (bonus) ===== -->
+        <dependency>
+            <groupId>org.apache.pdfbox</groupId>
+            <artifactId>pdfbox</artifactId>
+            <version>${pdfbox.version}</version>
+        </dependency>
+
+        <!-- ===== Fake data generation ===== -->
+        <dependency>
+            <groupId>net.datafaker</groupId>
+            <artifactId>datafaker</artifactId>
+            <version>${datafaker.version}</version>
+        </dependency>
+
+        <!-- ===== Lombok ===== -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <plugins>
+
+            <!-- Compiler -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.13.0</version>
+                <configuration>
+                    <source>${maven.compiler.source}</source>
+                    <target>${maven.compiler.target}</target>
+                    <annotationProcessorPaths>
+                        <path>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                            <version>${lombok.version}</version>
+                        </path>
+                    </annotationProcessorPaths>
+                </configuration>
+            </plugin>
+
+            <!-- Surefire drives the TestNG suite + Allure AspectJ weaving -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${surefire.version}</version>
+                <configuration>
+                    <suiteXmlFiles>
+                        <suiteXmlFile>${suiteXmlFile}</suiteXmlFile>
+                    </suiteXmlFiles>
+                    <testFailureIgnore>false</testFailureIgnore>
+                    <systemPropertyVariables>
+                        <browser>${browser}</browser>
+                        <headless>${headless}</headless>
+                        <env>${env}</env>
+                        <cucumber.filter.tags>${cucumber.filter.tags}</cucumber.filter.tags>
+                    </systemPropertyVariables>
+                    
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.aspectj</groupId>
+                        <artifactId>aspectjweaver</artifactId>
+                        <version>${aspectj.version}</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+
+            <!-- Allure report generation: mvn allure:report / allure:serve -->
+            <plugin>
+                <groupId>io.qameta.allure</groupId>
+                <artifactId>allure-maven</artifactId>
+                <version>${allure.maven.version}</version>
+                <configuration>
+                    <reportVersion>${allure.version}</reportVersion>
+                    <resultsDirectory>${project.basedir}/target/allure-results</resultsDirectory>
+                </configuration>
+            </plugin>
+
+        </plugins>
+    </build>
+
+    <!-- =================================================================== -->
+    <!-- Profiles let you switch the suite that Surefire runs                -->
+    <!--   mvn clean test                  -> default smoke+regression       -->
+    <!--   mvn clean test -P regression                                      -->
+    <!--   mvn clean test -P parallel                                        -->
+    <!-- =================================================================== -->
+    <profiles>
+        <profile>
+            <id>default</id>
+            <activation><activeByDefault>true</activeByDefault></activation>
+            <properties><suiteXmlFile>src/test/resources/suites/testng.xml</suiteXmlFile></properties>
+        </profile>
+        <profile>
+            <id>regression</id>
+            <properties><suiteXmlFile>src/test/resources/suites/regression.xml</suiteXmlFile></properties>
+        </profile>
+        <profile>
+            <id>smoke</id>
+            <properties><suiteXmlFile>src/test/resources/suites/smoke.xml</suiteXmlFile></properties>
+        </profile>
+        <profile>
+            <id>parallel</id>
+            <properties><suiteXmlFile>src/test/resources/suites/parallel.xml</suiteXmlFile></properties>
+        </profile>
+    </profiles>
+
+</project>

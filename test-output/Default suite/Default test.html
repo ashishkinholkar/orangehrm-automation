@@ -1,0 +1,301 @@
+<html>
+<head>
+<title>TestNG:  Default test</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Default test</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>4/6/0</td>
+</tr><tr>
+<td>Started on:</td><td>Tue Jun 30 23:52:33 IST 2026</td>
+</tr>
+<tr><td>Total time:</td><td>255 seconds (255155 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.orangehrm.runner.RegressionRunner.runScenario()'><b>runScenario</b><br>Test class: com.orangehrm.runner.RegressionRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Create a system user and verify it can be found", "Admin - User Management"</td>
+<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //span[normalize-space()=&apos;Admin&apos;] (tried for 30 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.21.0&apos;, revision: &apos;79ed462ef4&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.19&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 149.0.7827.197, chrome: {chromedriverVersion: 149.0.7827.155 (07b52360cc1..., userDataDir: C:\Users\ashis\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59785}, goog:processID: 30420, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59785/devtoo..., se:cdpVersion: 149.0.7827.197, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: f2ac3a1bec049a36cfc5d0f771091ff0
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at com.orangehrm.factories.ExplicitWaitFactory.performExplicitWait(ExplicitWaitFactory.java:29)
+	at com.orangehrm.pages.base.BasePage.click(BasePage.java:35)
+	at com.orangehrm.pages.modules.DashboardPage.navigateTo(DashboardPage.java:43)
+	at com.orangehrm.stepdefinitions.NavigationSteps.navigateToModule(NavigationSteps.java:30)
+	at ✽.the admin navigates to the &quot;Admin&quot; module(file:///D:/Automation%20Project/orangehrm-automation/orangehrm-automation/src/test/resources/features/admin.feature:9)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1251502504", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1251502504'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //span[normalize-space()=&apos;Admin&apos;] (tried for 30 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.21.0&apos;, revision: &apos;79ed462ef4&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.19&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 149.0.7827.197, chrome: {chromedriverVersion: 149.0.7827.155 (07b52360cc1..., userDataDir: C:\Users\ashis\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59785}, goog:processID: 30420, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59785/devtoo..., se:cdpVersion: 149.0.7827.197, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: f2ac3a1bec049a36cfc5d0f771091ff0
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at com.orangehrm.factories.ExplicitWaitFactory.performExplicitWait(ExplicitWaitFactory.java:29)
+	at com.orangehrm.pages.base.BasePage.click(BasePage.java:35)
+	at com.orangehrm.pages.modules.DashboardPage.navigateTo(DashboardPage.java:43)
+	at com.orangehrm.stepdefinitions.NavigationSteps.navigateToModule(NavigationSteps.java:30)
+	at ✽.the admin navigates to the &quot;Admin&quot; module(file:///D:/Automation%20Project/orangehrm-automation/orangehrm-automation/src/test/resources/features/admin.feature:9)
+</pre></div></td>
+<td>41</td>
+<td>com.orangehrm.runner.RegressionRunner@72d6b3ba</td></tr>
+<tr>
+<td title='com.orangehrm.runner.RegressionRunner.runScenario()'><b>runScenario</b><br>Test class: com.orangehrm.runner.RegressionRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Add a candidate with a resume attachment", "Recruitment - Candidate Management"</td>
+<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //span[normalize-space()=&apos;Recruitment&apos;] (tried for 30 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.21.0&apos;, revision: &apos;79ed462ef4&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.19&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 149.0.7827.197, chrome: {chromedriverVersion: 149.0.7827.155 (07b52360cc1..., userDataDir: C:\Users\ashis\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55084}, goog:processID: 28768, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55084/devtoo..., se:cdpVersion: 149.0.7827.197, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 1aabc2765f3fc8da7b95bea7a56c000f
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at com.orangehrm.factories.ExplicitWaitFactory.performExplicitWait(ExplicitWaitFactory.java:29)
+	at com.orangehrm.pages.base.BasePage.click(BasePage.java:35)
+	at com.orangehrm.pages.modules.DashboardPage.navigateTo(DashboardPage.java:43)
+	at com.orangehrm.stepdefinitions.NavigationSteps.navigateToModule(NavigationSteps.java:30)
+	at ✽.the admin navigates to the &quot;Recruitment&quot; module(file:///D:/Automation%20Project/orangehrm-automation/orangehrm-automation/src/test/resources/features/recruitment.feature:9)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1378060385", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1378060385'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //span[normalize-space()=&apos;Recruitment&apos;] (tried for 30 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.21.0&apos;, revision: &apos;79ed462ef4&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.19&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 149.0.7827.197, chrome: {chromedriverVersion: 149.0.7827.155 (07b52360cc1..., userDataDir: C:\Users\ashis\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55084}, goog:processID: 28768, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55084/devtoo..., se:cdpVersion: 149.0.7827.197, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 1aabc2765f3fc8da7b95bea7a56c000f
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at com.orangehrm.factories.ExplicitWaitFactory.performExplicitWait(ExplicitWaitFactory.java:29)
+	at com.orangehrm.pages.base.BasePage.click(BasePage.java:35)
+	at com.orangehrm.pages.modules.DashboardPage.navigateTo(DashboardPage.java:43)
+	at com.orangehrm.stepdefinitions.NavigationSteps.navigateToModule(NavigationSteps.java:30)
+	at ✽.the admin navigates to the &quot;Recruitment&quot; module(file:///D:/Automation%20Project/orangehrm-automation/orangehrm-automation/src/test/resources/features/recruitment.feature:9)
+</pre></div></td>
+<td>35</td>
+<td>com.orangehrm.runner.RegressionRunner@72d6b3ba</td></tr>
+<tr>
+<td title='com.orangehrm.runner.RegressionRunner.runScenario()'><b>runScenario</b><br>Test class: com.orangehrm.runner.RegressionRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Create a new employee and verify it is searchable", "PIM - Employee Management"</td>
+<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //span[normalize-space()=&apos;PIM&apos;] (tried for 30 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.21.0&apos;, revision: &apos;79ed462ef4&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.19&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 149.0.7827.197, chrome: {chromedriverVersion: 149.0.7827.155 (07b52360cc1..., userDataDir: C:\Users\ashis\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62231}, goog:processID: 28772, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62231/devtoo..., se:cdpVersion: 149.0.7827.197, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 4f21cdda21eb7a6b0b1a9c32907ab2a1
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at com.orangehrm.factories.ExplicitWaitFactory.performExplicitWait(ExplicitWaitFactory.java:29)
+	at com.orangehrm.pages.base.BasePage.click(BasePage.java:35)
+	at com.orangehrm.pages.modules.DashboardPage.navigateTo(DashboardPage.java:43)
+	at com.orangehrm.stepdefinitions.NavigationSteps.navigateToModule(NavigationSteps.java:30)
+	at ✽.the admin navigates to the &quot;PIM&quot; module(file:///D:/Automation%20Project/orangehrm-automation/orangehrm-automation/src/test/resources/features/pim.feature:9)
+</pre></div><a href='#' onClick='toggleBox("stack-trace502458215", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace502458215'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //span[normalize-space()=&apos;PIM&apos;] (tried for 30 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.21.0&apos;, revision: &apos;79ed462ef4&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.19&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 149.0.7827.197, chrome: {chromedriverVersion: 149.0.7827.155 (07b52360cc1..., userDataDir: C:\Users\ashis\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62231}, goog:processID: 28772, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62231/devtoo..., se:cdpVersion: 149.0.7827.197, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 4f21cdda21eb7a6b0b1a9c32907ab2a1
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at com.orangehrm.factories.ExplicitWaitFactory.performExplicitWait(ExplicitWaitFactory.java:29)
+	at com.orangehrm.pages.base.BasePage.click(BasePage.java:35)
+	at com.orangehrm.pages.modules.DashboardPage.navigateTo(DashboardPage.java:43)
+	at com.orangehrm.stepdefinitions.NavigationSteps.navigateToModule(NavigationSteps.java:30)
+	at ✽.the admin navigates to the &quot;PIM&quot; module(file:///D:/Automation%20Project/orangehrm-automation/orangehrm-automation/src/test/resources/features/pim.feature:9)
+</pre></div></td>
+<td>42</td>
+<td>com.orangehrm.runner.RegressionRunner@72d6b3ba</td></tr>
+<tr>
+<td title='com.orangehrm.runner.RegressionRunner.runScenario()'><b>runScenario</b><br>Test class: com.orangehrm.runner.RegressionRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Search leave records", "Leave Management"</td>
+<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //span[normalize-space()=&apos;Leave&apos;] (tried for 30 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.21.0&apos;, revision: &apos;79ed462ef4&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.19&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 149.0.7827.197, chrome: {chromedriverVersion: 149.0.7827.155 (07b52360cc1..., userDataDir: C:\Users\ashis\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55074}, goog:processID: 32200, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55074/devtoo..., se:cdpVersion: 149.0.7827.197, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: b94312d631e689faf887d1f61dfe4951
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at com.orangehrm.factories.ExplicitWaitFactory.performExplicitWait(ExplicitWaitFactory.java:29)
+	at com.orangehrm.pages.base.BasePage.click(BasePage.java:35)
+	at com.orangehrm.pages.modules.DashboardPage.navigateTo(DashboardPage.java:43)
+	at com.orangehrm.stepdefinitions.NavigationSteps.navigateToModule(NavigationSteps.java:30)
+	at ✽.the admin navigates to the &quot;Leave&quot; module(file:///D:/Automation%20Project/orangehrm-automation/orangehrm-automation/src/test/resources/features/leave.feature:9)
+</pre></div><a href='#' onClick='toggleBox("stack-trace815799768", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace815799768'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //span[normalize-space()=&apos;Leave&apos;] (tried for 30 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.21.0&apos;, revision: &apos;79ed462ef4&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.19&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 149.0.7827.197, chrome: {chromedriverVersion: 149.0.7827.155 (07b52360cc1..., userDataDir: C:\Users\ashis\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55074}, goog:processID: 32200, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55074/devtoo..., se:cdpVersion: 149.0.7827.197, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: b94312d631e689faf887d1f61dfe4951
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at com.orangehrm.factories.ExplicitWaitFactory.performExplicitWait(ExplicitWaitFactory.java:29)
+	at com.orangehrm.pages.base.BasePage.click(BasePage.java:35)
+	at com.orangehrm.pages.modules.DashboardPage.navigateTo(DashboardPage.java:43)
+	at com.orangehrm.stepdefinitions.NavigationSteps.navigateToModule(NavigationSteps.java:30)
+	at ✽.the admin navigates to the &quot;Leave&quot; module(file:///D:/Automation%20Project/orangehrm-automation/orangehrm-automation/src/test/resources/features/leave.feature:9)
+</pre></div></td>
+<td>36</td>
+<td>com.orangehrm.runner.RegressionRunner@72d6b3ba</td></tr>
+<tr>
+<td title='com.orangehrm.runner.RegressionRunner.runScenario()'><b>runScenario</b><br>Test class: com.orangehrm.runner.RegressionRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Create a KPI for a job title", "Performance - KPI Management"</td>
+<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //span[normalize-space()=&apos;Performance&apos;] (tried for 30 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.21.0&apos;, revision: &apos;79ed462ef4&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.19&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 149.0.7827.197, chrome: {chromedriverVersion: 149.0.7827.155 (07b52360cc1..., userDataDir: C:\Users\ashis\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61764}, goog:processID: 26208, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61764/devtoo..., se:cdpVersion: 149.0.7827.197, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: d62af3061bb2efc2b5f8766ceb7234af
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at com.orangehrm.factories.ExplicitWaitFactory.performExplicitWait(ExplicitWaitFactory.java:29)
+	at com.orangehrm.pages.base.BasePage.click(BasePage.java:35)
+	at com.orangehrm.pages.modules.DashboardPage.navigateTo(DashboardPage.java:43)
+	at com.orangehrm.stepdefinitions.NavigationSteps.navigateToModule(NavigationSteps.java:30)
+	at ✽.the admin navigates to the &quot;Performance&quot; module(file:///D:/Automation%20Project/orangehrm-automation/orangehrm-automation/src/test/resources/features/performance.feature:9)
+</pre></div><a href='#' onClick='toggleBox("stack-trace915686941", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace915686941'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //span[normalize-space()=&apos;Performance&apos;] (tried for 30 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.21.0&apos;, revision: &apos;79ed462ef4&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.19&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 149.0.7827.197, chrome: {chromedriverVersion: 149.0.7827.155 (07b52360cc1..., userDataDir: C:\Users\ashis\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61764}, goog:processID: 26208, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61764/devtoo..., se:cdpVersion: 149.0.7827.197, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: d62af3061bb2efc2b5f8766ceb7234af
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at com.orangehrm.factories.ExplicitWaitFactory.performExplicitWait(ExplicitWaitFactory.java:29)
+	at com.orangehrm.pages.base.BasePage.click(BasePage.java:35)
+	at com.orangehrm.pages.modules.DashboardPage.navigateTo(DashboardPage.java:43)
+	at com.orangehrm.stepdefinitions.NavigationSteps.navigateToModule(NavigationSteps.java:30)
+	at ✽.the admin navigates to the &quot;Performance&quot; module(file:///D:/Automation%20Project/orangehrm-automation/orangehrm-automation/src/test/resources/features/performance.feature:9)
+</pre></div></td>
+<td>35</td>
+<td>com.orangehrm.runner.RegressionRunner@72d6b3ba</td></tr>
+<tr>
+<td title='com.orangehrm.runner.RegressionRunner.runScenario()'><b>runScenario</b><br>Test class: com.orangehrm.runner.RegressionRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Create an employee with a profile image", "PIM - Employee Management"</td>
+<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //span[normalize-space()=&apos;PIM&apos;] (tried for 30 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.21.0&apos;, revision: &apos;79ed462ef4&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.19&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 149.0.7827.197, chrome: {chromedriverVersion: 149.0.7827.155 (07b52360cc1..., userDataDir: C:\Users\ashis\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53243}, goog:processID: 33144, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:53243/devtoo..., se:cdpVersion: 149.0.7827.197, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: fc9c7791c0a0a6ef5c862b62f7d8c244
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at com.orangehrm.factories.ExplicitWaitFactory.performExplicitWait(ExplicitWaitFactory.java:29)
+	at com.orangehrm.pages.base.BasePage.click(BasePage.java:35)
+	at com.orangehrm.pages.modules.DashboardPage.navigateTo(DashboardPage.java:43)
+	at com.orangehrm.stepdefinitions.NavigationSteps.navigateToModule(NavigationSteps.java:30)
+	at ✽.the admin navigates to the &quot;PIM&quot; module(file:///D:/Automation%20Project/orangehrm-automation/orangehrm-automation/src/test/resources/features/pim.feature:9)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1280441498", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1280441498'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //span[normalize-space()=&apos;PIM&apos;] (tried for 30 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.21.0&apos;, revision: &apos;79ed462ef4&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.19&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 149.0.7827.197, chrome: {chromedriverVersion: 149.0.7827.155 (07b52360cc1..., userDataDir: C:\Users\ashis\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53243}, goog:processID: 33144, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:53243/devtoo..., se:cdpVersion: 149.0.7827.197, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: fc9c7791c0a0a6ef5c862b62f7d8c244
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at com.orangehrm.factories.ExplicitWaitFactory.performExplicitWait(ExplicitWaitFactory.java:29)
+	at com.orangehrm.pages.base.BasePage.click(BasePage.java:35)
+	at com.orangehrm.pages.modules.DashboardPage.navigateTo(DashboardPage.java:43)
+	at com.orangehrm.stepdefinitions.NavigationSteps.navigateToModule(NavigationSteps.java:30)
+	at ✽.the admin navigates to the &quot;PIM&quot; module(file:///D:/Automation%20Project/orangehrm-automation/orangehrm-automation/src/test/resources/features/pim.feature:9)
+</pre></div></td>
+<td>35</td>
+<td>com.orangehrm.runner.RegressionRunner@72d6b3ba</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.orangehrm.runner.RegressionRunner.runScenario()'><b>runScenario</b><br>Test class: com.orangehrm.runner.RegressionRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Successful login with valid admin credentials", "OrangeHRM Login and Dashboard"</td>
+<td></td>
+<td>8</td>
+<td>com.orangehrm.runner.RegressionRunner@72d6b3ba</td></tr>
+<tr>
+<td title='com.orangehrm.runner.RegressionRunner.runScenario()'><b>runScenario</b><br>Test class: com.orangehrm.runner.RegressionRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Login validation for empty fields", "OrangeHRM Login and Dashboard"</td>
+<td></td>
+<td>6</td>
+<td>com.orangehrm.runner.RegressionRunner@72d6b3ba</td></tr>
+<tr>
+<td title='com.orangehrm.runner.RegressionRunner.runScenario()'><b>runScenario</b><br>Test class: com.orangehrm.runner.RegressionRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Login fails with invalid credentials", "OrangeHRM Login and Dashboard"</td>
+<td></td>
+<td>7</td>
+<td>com.orangehrm.runner.RegressionRunner@72d6b3ba</td></tr>
+<tr>
+<td title='com.orangehrm.runner.RegressionRunner.runScenario()'><b>runScenario</b><br>Test class: com.orangehrm.runner.RegressionRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Login validation for empty fields", "OrangeHRM Login and Dashboard"</td>
+<td></td>
+<td>5</td>
+<td>com.orangehrm.runner.RegressionRunner@72d6b3ba</td></tr>
+</table><p>
+</body>
+</html>

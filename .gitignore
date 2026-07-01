@@ -1,0 +1,26 @@
+# Maven
+target/
+!.mvn/wrapper/maven-wrapper.jar
+
+# IDE
+.idea/
+*.iml
+.vscode/
+.settings/
+.classpath
+.project
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs & reports (regenerated each run)
+logs/
+*.log
+allure-results/
+allure-report/
+.allure/
+
+# Local overrides / secrets
+*.local.properties
+.env
